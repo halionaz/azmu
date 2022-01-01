@@ -4,10 +4,10 @@ import Auth from "routes/Auth";
 import Signin from "routes/Signin";
 import Header from "./Header";
 
-const AppRouter = () => {
+const AppRouter = ({usr}) => {
     return (
         <Router>
-            <Header></Header>
+            <Header usr={usr}></Header>
             <Routes>
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/signin" element={<Auth />}></Route>

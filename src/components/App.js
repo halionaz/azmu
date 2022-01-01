@@ -5,26 +5,30 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(undefined);
 
   useEffect(() => {
     const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if(user){
-        console.log(user);
+    onAuthStateChanged(auth, (usr) => {
+      if(usr){
+        // console.log(usr);
+        setUser({
+          displayName : usr.displayName,
+          uid : usr.uid,
+        });
       } else {
-        console.log("NO");
+        setUser(null);
       }
     })
     setLoading(false);
   },[])
   
   return (
+    loading ? 
+    <div>loading</div>
+    :
     <>
-      {loading ? 
-      <div>loading</div>
-      :
-      <AppRouter></AppRouter>}
+      <AppRouter usr={user}></AppRouter>
     </>
   );
 }
