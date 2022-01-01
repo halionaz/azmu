@@ -1,7 +1,11 @@
-const Ply = ({music}) => {
-    const audio = new Audio(music.musicsrc);
+// import { useEffect } from "react";
+
+const Ply = ({music, curPlay, setCurPlay, isPlay}) => {
     const start = () => {
-        audio.play();
+        if(!curPlay || curPlay.name !== music.name){
+            console.log(`Play : ${music.name}`);
+            setCurPlay(music);
+        }
     }
     return (
         <div onClick={start} style={{"cursor" : "pointer"}}>

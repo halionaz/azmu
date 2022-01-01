@@ -8,6 +8,12 @@ import { useEffect, useState } from "react";
 function App() {
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(undefined);
+    const [isPlay, setIsPlay] = useState(true);
+    const [curPlay, setCurPlay] = useState(null);
+
+    const playOrStop = () => {
+        setIsPlay(cur => !cur);
+    }
 
     useEffect(() => {
         const auth = getAuth();
@@ -28,7 +34,7 @@ function App() {
         <div>loading</div>
     ) : (
         <>
-            <AppRouter usr={user}></AppRouter>
+            <AppRouter usr={user} isPlay={isPlay} curPlay={curPlay} setCurPlay={setCurPlay} playOrStop={playOrStop}></AppRouter>
         </>
     );
 }

@@ -4,17 +4,19 @@ import Auth from "routes/Auth";
 import Signup from "routes/Signup";
 import Header from "./Header";
 import Profile from "routes/Profile";
+import Player from "./Player";
 
-const AppRouter = ({usr}) => {
+const AppRouter = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
     return (
         <Router>
             <Header usr={usr}></Header>
             <Routes>
-                <Route path="/" element={<Home usr={usr}/>}></Route>
+                <Route path="/" element={<Home usr={usr} isPlay={isPlay} curPlay={curPlay} setCurPlay={setCurPlay} />}></Route>
                 {usr ===null ? (<Route path="/signin" element={<Auth />}></Route>) : (<Route path="/signin" element={<Navigate replace to="/"></Navigate>}></Route>)}
                 {usr ===null ? (<Route path="/signup" element={<Signup />}></Route>) : (<Route path="/signup" element={<Navigate replace to="/"></Navigate>}></Route>)}
                 {usr ? (<Route path="/profile" element={<Profile usr={usr} />}></Route>) : (<Route path="/profile" element={<Navigate replace to="/"></Navigate>}></Route>)}
             </Routes>
+            <Player isPlay={isPlay} curPlay={curPlay} setCurPlay={setCurPlay} playOrStop={playOrStop}></Player>
         </Router>
     )
 };
