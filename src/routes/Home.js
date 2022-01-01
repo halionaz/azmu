@@ -1,7 +1,7 @@
 import Ply from "components/Ply";
 import { db } from "fbase";
 import { useEffect, useState } from "react";
-import { collection, doc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 const Home = ({usr}) => {
     const [musics, setMusics] = useState([]);
