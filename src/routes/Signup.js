@@ -1,8 +1,13 @@
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {
+    createUserWithEmailAndPassword,
+    getAuth,
+    updateProfile,
+} from "firebase/auth";
 import { useState } from "react";
 
 const Signup = () => {
     const [usrID, setUsrID] = useState("");
+    const [usrName, setUsrName] = useState("");
     const [usrPD, setUsrPD] = useState("");
 
     const onSubmit = (e) => {
@@ -10,19 +15,24 @@ const Signup = () => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, usrID, usrPD)
             .then((usrCredential) => {
-                console.log(usrCredential);
-                console.log("성공적으로 계정 생성!");
+                updateProfile(auth.currentUser, {
+                    displayName: usrName,
+                });
             })
             .catch((err) => {
                 console.log(err.message);
             });
-        setUsrID(""); setUsrPD("");
+        setUsrID("");
+        setUsrName("");
+        setUsrPD("");
     };
     const onChange = (event) => {
         if (event.target.name === "id") {
             setUsrID(event.target.value);
         } else if (event.target.name === "pd") {
             setUsrPD(event.target.value);
+        } else if (event.target.name === "nickname") {
+            setUsrName(event.target.value);
         }
     };
 
@@ -36,6 +46,13 @@ const Signup = () => {
                     type={"text"}
                     placeholder="아이디(이메일)"
                     value={usrID}
+                    onChange={onChange}
+                ></input>
+                <input
+                    name="nickname"
+                    type={"text"}
+                    placeholder="닉네임"
+                    value={usrName}
                     onChange={onChange}
                 ></input>
                 <input

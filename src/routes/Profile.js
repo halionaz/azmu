@@ -1,8 +1,8 @@
-const Profile = () => {
+const Profile = ({usr}) => {
 
     return (
         <div>
-            내 프로필
+            {usr.displayName}의 프로필
         </div>
     )
 
