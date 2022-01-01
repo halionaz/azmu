@@ -3,6 +3,7 @@ import Home from "routes/Home";
 import Auth from "routes/Auth";
 import Signup from "routes/Signup";
 import Header from "./Header";
+import Profile from "routes/Profile";
 
 const AppRouter = ({usr}) => {
     return (
@@ -12,6 +13,7 @@ const AppRouter = ({usr}) => {
                 <Route path="/" element={<Home />}></Route>
                 {usr ===null ? (<Route path="/signin" element={<Auth />}></Route>) : (<Route path="/signin" element={<Navigate replace to="/"></Navigate>}></Route>)}
                 {usr ===null ? (<Route path="/signup" element={<Signup />}></Route>) : (<Route path="/signup" element={<Navigate replace to="/"></Navigate>}></Route>)}
+                {usr ? (<Route path="/profile" element={<Profile />}></Route>) : (<Route path="/profile" element={<Navigate replace to="/"></Navigate>}></Route>)}
             </Routes>
         </Router>
     )

@@ -1,3 +1,4 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,6 +14,12 @@ const Auth = () => {
     };
     const onSubmit = (event) => {
         event.preventDefault();
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, usrID, usrPD).then((credit) => {
+            console.log("로그인 성공");
+        }).catch( err => {
+            console.error(err);
+        })
         setUsrID(""); setUsrPD("");
     };
     return (

@@ -14,12 +14,15 @@ const Header = ({usr}) => {
         <>
             <Link to="/"><h1>azmu</h1></Link>
             {
-                usr === null ? (
+                usr === null && (
                     <>
                     <Link to="/signin">로그인</Link>
                     <Link to="/signup">회원가입</Link>
                     </>
-                ) : (
+                ) 
+            }
+            {
+                usr && (
                     <>
                     <Link to="/profile">프로필</Link>
                     <button onClick={logout}>로그아웃</button>
