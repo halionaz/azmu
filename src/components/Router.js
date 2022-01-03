@@ -8,7 +8,7 @@ import Player from "./Player";
 
 const AppRouter = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <Header usr={usr}></Header>
             <Routes>
                 <Route path="/" element={<Home usr={usr} isPlay={isPlay} curPlay={curPlay} setCurPlay={setCurPlay} />}></Route>
@@ -16,7 +16,7 @@ const AppRouter = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
                 {usr ===null ? (<Route path="/signup" element={<Signup />}></Route>) : (<Route path="/signup" element={<Navigate replace to="/"></Navigate>}></Route>)}
                 {usr ? (<Route path="/profile" element={<Profile usr={usr} />}></Route>) : (<Route path="/profile" element={<Navigate replace to="/"></Navigate>}></Route>)}
             </Routes>
-            <Player isPlay={isPlay} curPlay={curPlay} setCurPlay={setCurPlay} playOrStop={playOrStop}></Player>
+            {usr && <Player isPlay={isPlay} curPlay={curPlay} setCurPlay={setCurPlay} playOrStop={playOrStop}></Player>}
         </Router>
     )
 };
