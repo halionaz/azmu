@@ -1,6 +1,7 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import style from "routes/Auth.module.css"
 
 const Auth = () => {
     const [usrID, setUsrID] = useState("");
@@ -27,31 +28,35 @@ const Auth = () => {
         setUsrID(""); setUsrPD("");
     };
     return (
-        <>
+        <div className={style.sign}>
             {signinning ? (<div>로그인 중...</div>) :(
                 <>
-                    <form onSubmit={onSubmit} >
+                    <form className={style.form} onSubmit={onSubmit} >
                         <input
                             name="id"
                             type={"text"}
                             placeholder="아이디(이메일)"
                             value={usrID}
                             onChange={onChange}
-                        ></input>
+                            className={style.inner_form}
+                            ></input>
                         <input
                             name="pd"
                             type={"password"}
                             placeholder="비밀번호"
                             value={usrPD}
                             onChange={onChange}
+                            className={style.inner_form}
                         ></input>
-                        <input type={"submit"} value={"로그인"}></input>
+                        <input className={style.submit} type={"submit"} value={"로그인"}></input>
                     </form>
-                    {errorMessage}
-                    <Link to="/signup">회원가입</Link>
+                    <div className={style.err}>
+                        {errorMessage}
+                        <Link className={style.signup} to="/signup">회원가입</Link>
+                    </div>
                 </>
             )}
-        </>
+        </div>
     );
 };
 

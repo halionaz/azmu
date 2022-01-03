@@ -1,0 +1,34 @@
+.player{
+    z-index: 500;
+    height: 111px;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 955px;
+    max-width: 1600px;
+    color: #989898;
+}
+
+.track{
+    position: absolute;
+    left: 30px;
+    top: 24px;
+    width: 28%;
+}
+
+.controller{
+    width: 375px;
+    margin: 0 auto;
+    padding-top: 23px;
+    white-space: nowrap;
+    position: relative;
+    text-align: center;
+}
+
+.playBtn{
+    cursor: pointer;
+    font-size: 40px;
+    color: #fff;
+}

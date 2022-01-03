@@ -4,6 +4,7 @@ import {
     onAuthStateChanged,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
+import "components/App.css"
 
 function App() {
     const [loading, setLoading] = useState(true);

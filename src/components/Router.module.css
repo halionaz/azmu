@@ -1,0 +1,19 @@
+.wrap{
+    width: 100%;
+    min-width: 955px;
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+.main{
+    margin: 0 auto;
+    padding: 95px 0 40px 80px;
+    width: 955px;
+    padding-right: 80px;
+}
+.inner_section{
+    padding-top: 10px;
+    max-width: 1600px;
+    min-width: 800px;
+    margin: 0 auto;
+}

@@ -4,6 +4,7 @@ import {
     updateProfile,
 } from "firebase/auth";
 import { useState } from "react";
+import style from "routes/Auth.module.css";
 
 const Signup = () => {
     const [usrID, setUsrID] = useState("");
@@ -41,39 +42,44 @@ const Signup = () => {
     };
 
     return (
-        <>
+        <div className={style.sign}>
             {signinning ? (
                 <div>가입 중...</div>
             ) : (
                 <>
-                <form onSubmit={onSubmit}>
-                    <input
-                        name="id"
-                        type={"text"}
-                        placeholder="아이디(이메일)"
-                        value={usrID}
-                        onChange={onChange}
-                    ></input>
-                    <input
-                        name="nickname"
-                        type={"text"}
-                        placeholder="닉네임"
-                        value={usrName}
-                        onChange={onChange}
-                    ></input>
-                    <input
-                        name="pd"
-                        type={"password"}
-                        placeholder="비밀번호"
-                        value={usrPD}
-                        onChange={onChange}
-                    ></input>
-                    <input type={"submit"} value={"회원가입"}></input>
-                </form>
-                {errorMessage}
+                    <form className={style.form} onSubmit={onSubmit} >
+                        <input
+                            name="id"
+                            type={"text"}
+                            placeholder="아이디(이메일)"
+                            value={usrID}
+                            onChange={onChange}
+                            className={style.inner_form}
+                            ></input>
+                        <input
+                            name="nickname"
+                            type={"text"}
+                            placeholder="닉네임"
+                            value={usrName}
+                            onChange={onChange}
+                            className={style.inner_form}
+                        ></input>
+                        <input
+                            name="pd"
+                            type={"password"}
+                            placeholder="비밀번호"
+                            value={usrPD}
+                            onChange={onChange}
+                            className={style.inner_form}
+                        ></input>
+                        <input className={style.submit} type={"submit"} value={"회원가입"}></input>
+                    </form>
+                    <div className={style.err}>
+                        {errorMessage}
+                    </div>
                 </>
             )}
-        </>
+        </div>
     );
 };
 
