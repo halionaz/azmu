@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/azmu/static/css/main.bf1a0cf5.css",
+    "main.js": "/azmu/static/js/main.71f598a0.js",
+    "index.html": "/azmu/index.html",
+    "main.bf1a0cf5.css.map": "/azmu/static/css/main.bf1a0cf5.css.map",
+    "main.71f598a0.js.map": "/azmu/static/js/main.71f598a0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf1a0cf5.css",
+    "static/js/main.71f598a0.js"
+  ]
+}
