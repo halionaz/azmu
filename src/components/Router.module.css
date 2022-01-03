@@ -12,8 +12,8 @@
     padding-right: 80px;
 }
 .inner_section{
-    padding-top: 10px;
     max-width: 1600px;
     min-width: 800px;
     margin: 0 auto;
+    padding: 10px 40px;
 }

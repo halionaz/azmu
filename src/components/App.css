@@ -23,6 +23,11 @@ color : inherit;
 a:active {
 color : inherit
 }
+
+p, h2{
+    margin: 0;
+}
+
 div{
     display: block;
 }

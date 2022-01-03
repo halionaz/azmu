@@ -32,3 +32,38 @@
     font-size: 40px;
     color: #fff;
 }
+
+.img{
+    width: 63px;
+    height: 63px;
+    float: left;
+    border-radius: 4px;
+}
+.grayimg{
+    background-color: #989898;
+}
+
+.trackInfo{
+    float: left;
+    margin-left: 20px;
+}
+
+.title{
+    padding-top: 12px;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.artist{
+    padding-top: 7px;
+    font-size: 14px;
+    color: #989898;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

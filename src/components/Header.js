@@ -13,7 +13,7 @@ const Header = ({usr}) => {
     }
     return (
         <header className={style.header}>
-            <Link to="/" className={style.azmu}><h1>azmu</h1></Link>
+            <Link to="/" className={style.azmu}><h1><span className={style.highlight}>az</span>mu;</h1></Link>
             <div className={style.navi}>
                 {
                     usr === null && (

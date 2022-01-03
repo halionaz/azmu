@@ -8,10 +8,14 @@ const Ply = ({music, curPlay, setCurPlay, isPlay}) => {
         }
     }
     return (
-        <div onClick={start} style={{"cursor" : "pointer"}}>
+        <div className={style.ply} onClick={start} style={{"cursor" : "pointer"}}>
             <img src={music.imgsrc} alt={`${music.name} Album Cover`} className={style.img}></img>
-            <div>{music.name}</div>
-            <div>{music.artist}</div>
+            <div className={style.musicInfo}>
+                <div className={style.trackInfo}>
+                    <p className={style.title} style={{"color" : ((curPlay && curPlay.name === music.name )? "coral" : "#181818")}}>{music.name}</p>
+                    <p className={style.artist} style={{"color" : ((curPlay && curPlay.name === music.name )? "coral" : "#181818")}}>{music.artist}</p>
+                </div>
+            </div>
         </div>
     )
 }

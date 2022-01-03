@@ -2,6 +2,7 @@ import Ply from "components/Ply";
 import { db } from "fbase";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
+import style from "components/Ply.module.css";
 
 const Home = ({usr, curPlay, setCurPlay, isPlay}) => {
     const [musics, setMusics] = useState([]);
@@ -30,13 +31,11 @@ const Home = ({usr, curPlay, setCurPlay, isPlay}) => {
                         <div>대충 홍보 페이지</div>
                     ) }
                     {usr && (
-                        <>
-                        <h2>재생목록</h2>
-                        <button>검색</button>
-                        {musics.map((music, i) => {
-                            return <Ply key={i} music={music} curPlay={curPlay} setCurPlay={setCurPlay} isPlay={isPlay}></Ply>;
-                        })}
-                        </>
+                        <div className={style.playlist}>
+                            {musics.map((music, i) => {
+                                return <Ply key={i} music={music} curPlay={curPlay} setCurPlay={setCurPlay} isPlay={isPlay}></Ply>;
+                            })}
+                        </div>
                     )}
                 </>
             )}

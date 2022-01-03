@@ -26,7 +26,15 @@ const Player = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
     return (
         <div className={style.player}>
             <div className={style.track}>
-                <strong>현재곡 : {curPlay ? (curPlay.name) : "없음"}</strong>
+                {curPlay ? (
+                    <img src={curPlay.imgsrc} alt={`Current Play music ${curPlay.name}'s Cover`} className={style.img}></img>
+                ) : (
+                    <div className={`${style.img} ${style.grayimg}`} />
+                )}
+                <div className={style.trackInfo}>
+                    <p className={style.title}>{curPlay ? (curPlay.name) : "없음"}</p>
+                    <p className={style.artist}>{curPlay ? (curPlay.artist) : "홍길동"}</p>
+                </div>
             </div>
             <div className={style.controller}>
                 <span className={style.playBtn} onClick={playBtnClicked}>

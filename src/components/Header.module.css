@@ -21,6 +21,9 @@
     vertical-align: middle;
     display: inline-block; 
 }
+.highlight{
+    color: rgb(255, 151, 113);
+}
 
 .navi{
     text-decoration: none;
