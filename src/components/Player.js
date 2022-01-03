@@ -4,6 +4,7 @@ import style from "components/Player.module.css"
 const audio = new Audio();
 
 const Player = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
+    console.log(usr);
     useEffect(()=>{
         if(curPlay){
             audio.src = curPlay.musicsrc;
@@ -33,7 +34,7 @@ const Player = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
                 )}
                 <div className={style.trackInfo}>
                     <p className={style.title}>{curPlay ? (curPlay.name) : "없음"}</p>
-                    <p className={style.artist}>{curPlay ? (curPlay.artist) : "홍길동"}</p>
+                    <p className={style.artist}>{curPlay ? (curPlay.artist) : (usr ? usr.displayName : "")}</p>
                 </div>
             </div>
             <div className={style.controller}>

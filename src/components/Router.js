@@ -23,7 +23,7 @@ const AppRouter = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
                 </div>
                 </section>
             </div>
-            <Player isPlay={isPlay} curPlay={curPlay} setCurPlay={setCurPlay} playOrStop={playOrStop}></Player>
+            <Player usr={usr} isPlay={isPlay} curPlay={curPlay} setCurPlay={setCurPlay} playOrStop={playOrStop}></Player>
         </Router>
     )
 };
