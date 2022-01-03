@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/azmu/static/css/main.42893aa0.css",
+    "main.css": "/azmu/static/css/main.3e46fd10.css",
     "main.js": "/azmu/static/js/main.c327f71b.js",
     "index.html": "/azmu/index.html",
-    "main.42893aa0.css.map": "/azmu/static/css/main.42893aa0.css.map",
+    "main.3e46fd10.css.map": "/azmu/static/css/main.3e46fd10.css.map",
     "main.c327f71b.js.map": "/azmu/static/js/main.c327f71b.js.map"
   },
   "entrypoints": [
-    "static/css/main.42893aa0.css",
+    "static/css/main.3e46fd10.css",
     "static/js/main.c327f71b.js"
   ]
 }
