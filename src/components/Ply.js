@@ -13,7 +13,7 @@ const Ply = ({music, curPlay, setCurPlay, isPlay}) => {
             <div className={style.musicInfo}>
                 <div className={style.trackInfo}>
                     <p className={style.title} style={{"color" : ((curPlay && curPlay.name === music.name )? "coral" : "#181818")}}>{music.name}</p>
-                    <p className={style.artist} style={{"color" : ((curPlay && curPlay.name === music.name )? "coral" : "#181818")}}>{music.artist}</p>
+                    <p className={style.artist} style={{"color" : ((curPlay && curPlay.name === music.name )? "coral" : "#666")}}>{music.artist}</p>
                 </div>
             </div>
         </div>
