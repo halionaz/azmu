@@ -9,9 +9,12 @@ const Signup = () => {
     const [usrID, setUsrID] = useState("");
     const [usrName, setUsrName] = useState("");
     const [usrPD, setUsrPD] = useState("");
+    const [signinning, setSigninning] = useState(false);
+    const [errorMessage, setErrorMessage] = useState(null);
 
     const onSubmit = (e) => {
         e.preventDefault();
+        setSigninning(true);
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, usrID, usrPD)
             .then((usrCredential) => {
@@ -20,7 +23,8 @@ const Signup = () => {
                 });
             })
             .catch((err) => {
-                console.log(err.message);
+                setSigninning(false);
+                setErrorMessage(err.message);
             });
         setUsrID("");
         setUsrName("");
@@ -38,32 +42,37 @@ const Signup = () => {
 
     return (
         <>
-            {/* <div>다음 회원가입 방법 중 하나를 선택하세요</div>
-            <button>이메일 아이디로 가입하기</button> */}
-            <form onSubmit={onSubmit}>
-                <input
-                    name="id"
-                    type={"text"}
-                    placeholder="아이디(이메일)"
-                    value={usrID}
-                    onChange={onChange}
-                ></input>
-                <input
-                    name="nickname"
-                    type={"text"}
-                    placeholder="닉네임"
-                    value={usrName}
-                    onChange={onChange}
-                ></input>
-                <input
-                    name="pd"
-                    type={"password"}
-                    placeholder="비밀번호"
-                    value={usrPD}
-                    onChange={onChange}
-                ></input>
-                <input type={"submit"} value={"회원가입"}></input>
-            </form>
+            {signinning ? (
+                <div>가입 중...</div>
+            ) : (
+                <>
+                <form onSubmit={onSubmit}>
+                    <input
+                        name="id"
+                        type={"text"}
+                        placeholder="아이디(이메일)"
+                        value={usrID}
+                        onChange={onChange}
+                    ></input>
+                    <input
+                        name="nickname"
+                        type={"text"}
+                        placeholder="닉네임"
+                        value={usrName}
+                        onChange={onChange}
+                    ></input>
+                    <input
+                        name="pd"
+                        type={"password"}
+                        placeholder="비밀번호"
+                        value={usrPD}
+                        onChange={onChange}
+                    ></input>
+                    <input type={"submit"} value={"회원가입"}></input>
+                </form>
+                {errorMessage}
+                </>
+            )}
         </>
     );
 };
