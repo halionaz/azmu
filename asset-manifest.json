@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/azmu/static/css/main.ae94dc88.css",
-    "main.js": "/azmu/static/js/main.8094be4a.js",
+    "main.css": "/azmu/static/css/main.1fae6ba3.css",
+    "main.js": "/azmu/static/js/main.2f1656d5.js",
     "index.html": "/azmu/index.html",
-    "main.ae94dc88.css.map": "/azmu/static/css/main.ae94dc88.css.map",
-    "main.8094be4a.js.map": "/azmu/static/js/main.8094be4a.js.map"
+    "main.1fae6ba3.css.map": "/azmu/static/css/main.1fae6ba3.css.map",
+    "main.2f1656d5.js.map": "/azmu/static/js/main.2f1656d5.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae94dc88.css",
-    "static/js/main.8094be4a.js"
+    "static/css/main.1fae6ba3.css",
+    "static/js/main.2f1656d5.js"
   ]
 }
