@@ -1,5 +1,5 @@
 {
-  "name": "azmu-app",
+  "name": "azmu",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,5 +40,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://halionaz.github.io/azmu"
+  "homepage": "https://halionaz.github.io/azmu",
+  "keywords": [],
+  "description": ""
 }
