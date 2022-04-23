@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import style from "components/Player.module.css"
 
 const audio = new Audio();
 
 const Player = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
-    console.log(usr);
+    const [volumeBtnActive, setVolumeBtnActive] = useState(false);
     useEffect(()=>{
         if(curPlay){
             audio.src = curPlay.musicsrc;
@@ -24,6 +24,11 @@ const Player = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
             playOrStop();
         }
     }
+    const volumeBtnClicked = () => {
+        setVolumeBtnActive((cur) => {
+            return !cur;
+        });
+    }
     return (
         <div className={style.player}>
             <div className={style.track}>
@@ -41,6 +46,16 @@ const Player = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
                 <span className={style.playBtn} onClick={playBtnClicked}>
                     <ion-icon name={isPlay ? "pause" : "play"}></ion-icon>
                 </span>
+            </div>
+            <div className={style.volumeArea}>
+                <span className={`${style.volumeBtn} ${volumeBtnActive && style.active}`} onClick={volumeBtnClicked}>
+                    <ion-icon name={"volume-medium-outline"}></ion-icon>
+                </span>
+                <div className={style.progressBar} style={{"display" : (volumeBtnActive ? "block" : "none")}}>
+                    <div className={style.rangeArea}>
+                        <input type="range"></input>
+                    </div>
+                </div>
             </div>
         </div>
     )

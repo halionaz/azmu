@@ -26,6 +26,27 @@
     position: relative;
     text-align: center;
 }
+.volumeArea{
+    position: absolute;
+    top: 40px;
+    right: 89px;
+}
+
+.volumeBtn{
+    cursor: pointer;
+    font-size: 30px;
+    color: rgb(180, 180, 180); 
+}
+.volumeBtn:hover {
+    color: rgb(128, 128, 128); 
+}
+
+.active{
+    color: #fff; 
+}
+.active:hover{
+    color: #fff;
+}
 
 .playBtn{
     cursor: pointer;
