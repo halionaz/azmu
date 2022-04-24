@@ -53,7 +53,8 @@ const Player = ({usr, isPlay, curPlay, playOrStop, setCurPlay}) => {
                 </span>
                 <div className={style.progressBar} style={{"display" : (volumeBtnActive ? "block" : "none")}}>
                     <div className={style.rangeArea}>
-                        <input type="range"></input>
+                        <input className={style.progress} type="range" min="0" max="100"></input>
+                        <i className={style.volumeHandle} style={{"left" : "50%"}} />
                     </div>
                 </div>
             </div>
